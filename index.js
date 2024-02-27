@@ -39,18 +39,18 @@ document.addEventListener(`DOMContentLoaded`,()=> {
     slider.addEventListener('mousemove',function(e){
         if (this.dataset.mouseDownAt === "0") return
         const currentX =  e.clientX - parseFloat(this.dataset.mouseDownAt);
-        const percentage = 100 * currentX / (window.innerWidth === 0 ? 1 : window.innerWidth);
+        const percentage = 100 * currentX / (!window.innerWidth ? 1 : window.innerWidth);
         
-        const maxRoll = -100 * (slider.offsetWidth - window.innerWidth) / (slider.offsetWidth === 0 ? 1 : slider.offsetWidth)
+        const maxRoll = -100 * (slider.offsetWidth - window.innerWidth) / (!slider.offsetWidth ? 1 : slider.offsetWidth)
 
         const locationRaw = percentage + parseFloat(this.dataset.prevPosition);
+
+        console.log(locationRaw)
 
         const location = Math.max(Math.min(0, locationRaw),maxRoll);
 
 
         this.dataset.location = location;
-
-        this.style.transform = `translateX( ${location}%)`
 
         this.animate({
             transform: `translateX( ${location}%)`
@@ -99,5 +99,30 @@ document.addEventListener(`DOMContentLoaded`,()=> {
             header.style.backgroundColor = "#ffffff00";
             header.style.marginTop = "20px";
         }
+    });
+   
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        slidesPerView: 1,
+      
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      
+        // And if we need scrollbar
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
       });
+
 });

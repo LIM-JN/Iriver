@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iriver</title>
     <link rel="stylesheet" href="./style.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 </head>
-<body>
 <header>
     <div class="logo">
         <img src="./icon/logo-aedf2d527f7879dff7f0e95c970f7ff9.svg">
@@ -29,34 +32,53 @@
         </div>
     </div>
 </header>
-<section class="sec1">
-    <div class="text active" id="text1">
-        <h1>QHD 2채널 무선 블랙박스</h1>
-        <h3>QHD 화질로 블랙박스의 서열을 바꾸다</h3>
-        <button>자세히 보기</button>
+<div class="swiper sec1">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide slider1">
+            <div class="text active" id="text1">
+                <h1>QHD 2채널 무선 블랙박스</h1>
+                <h3>QHD 화질로 블랙박스의 서열을 바꾸다</h3>
+                <button>자세히 보기</button>
+            </div>
+        </div>
+        <div class="swiper-slide slider2">
+            <div class="text" id="text2">
+                <h1>올인원 프리미엄 오디오</h1>
+                <h3>화이트 컬러를 입은 고출력 사운드</h3>
+                <button>자세히 보기</button>
+            </div>
+        </div>
+        <div class="swiper-slide slider3">
+            <div class="text" id="text3">
+                <h1>미니 올인원 CD플레이어 IAB4</h1>
+                <h3>레토로 감성 디자인에 필수 기능만 쏘옥쏙</h3>
+                <button>자세히 보기</button>
+            </div>
+        </div>
+        <div class="swiper-slide slider4">
+            <div class="text" id="text4">
+                <h1>올인원 로봇청소기 INS-200</h1>
+                <h3>청소의 시작과 끝을 하나로</h3>
+                <button>자세히 보기</button>
+            </div>
+        </div>
     </div>
-    <div class="text" id="text2">
-        <h1>올인원 프리미엄 오디오</h1>
-        <h3>화이트 컬러를 입은 고출력 사운드</h3>
-        <button>자세히 보기</button>
-    </div>
-    <div class="text" id="text3">
-        <h1>미니 올인원 CD플레이어 IAB4</h1>
-        <h3>레토로 감성 디자인에 필수 기능만 쏘옥쏙</h3>
-        <button>자세히 보기</button>
-    </div>
-    <div class="text" id="text4">
-        <h1>올인원 로봇청소기 INS-200</h1>
-        <h3>청소의 시작과 끝을 하나로</h3>
-        <button>자세히 보기</button>
-    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    
     <ul id="banner-wrap">
         <li class="btn selected" data-image="./img/banner0.jpg" data-text="text1">1</li>
         <li class="btn" data-image="./img/banner1.jpg" data-text="text2">2</li>
         <li class="btn" data-image="./img/banner2.jpg" data-text="text3">3</li>
         <li class="btn" data-image="./img/banner3.jpg" data-text="text4">4</li>
     </ul>
-</section>
+</div>
 <section class="sec2">
     <h2>Best Item</h2>
     <div class="slider" data-mouse-down-at="0" data-prev-position = "0">
@@ -208,7 +230,9 @@
         <h2>Redesign Your Life Style</h2>
     </div>
 </section>
-<footer>
+
+
+<footer class="footer">
     <div class="container">
         <div class="menu">
             <ul>
@@ -234,7 +258,7 @@
         <p class="copyright">Copyright © Dreamus Company, ALL RIGHT RESERVED</p>
     </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="./index.js"></script>
 </body>
 </html>
